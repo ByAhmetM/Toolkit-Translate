@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-page {
+  background: #242424;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: poppins;
+}
+
+.container {
+  width: 80vw;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  button:last-child {
+    margin-top: 30px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 30px;
+    @media (max-width: 800) {
+      font-size: 30px;
+    }
+  }
+}
+
+.upper {
+  display: flex;
+  gap: 10px;
+  .select {
+    flex: 1;
+  }
+}
+
+.middle {
+  display: flex;
+  gap: 105px;
+  margin-top: 20px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  div {
+    flex: 1;
+    &:last-child {
+      position: relative;
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  textarea {
+    width: 100%;
+    min-height: 300px;
+    resize: none;
+    max-height: 500px;
+    font-family: poppins;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+
+    &:disabled {
+      color: rgba(192, 192, 192);
+    }
+  }
+}
+
+button {
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  color: white;
+  &:hover {
+    border: 1px solid #646cff;
+  }
+}
+
+/* loading kısmı */
+.loading {
+  --speed-of-animation: 0.9s;
+  --gap: 6px;
+  --first-color: #4c86f9;
+  --second-color: #49a84c;
+  --third-color: #f6bb02;
+  --fourth-color: #f6bb02;
+  --fifth-color: #2196f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  gap: 6px;
+  height: 100px;
+}
+
+.loading span {
+  width: 4px;
+  height: 50px;
+  background: var(--first-color);
+  animation: scale var(--speed-of-animation) ease-in-out infinite;
+}
+
+.loading span:nth-child(2) {
+  background: var(--second-color);
+  animation-delay: -0.8s;
+}
+
+.loading span:nth-child(3) {
+  background: var(--third-color);
+  animation-delay: -0.7s;
+}
+
+.loading span:nth-child(4) {
+  background: var(--fourth-color);
+  animation-delay: -0.6s;
+}
+
+.loading span:nth-child(5) {
+  background: var(--fifth-color);
+  animation-delay: -0.5s;
+}
+
+@keyframes scale {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.05);
+  }
+
+  20% {
+    transform: scaleY(1);
+  }
+}
